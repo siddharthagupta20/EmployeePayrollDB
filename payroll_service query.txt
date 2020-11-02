@@ -1,0 +1,64 @@
+-- CREATING TABLES
+
+-- create table employee(
+-- emp_id int unsigned primary key not null unique auto_increment ,
+-- comp_id int unsigned not null unique,
+-- dept_id int unsigned not null,
+-- name varchar(50) not null,
+-- address varchar(50) not null default 'TBD',
+-- gender char(1) not null,
+-- foreign key(comp_id) references company(comp_id),
+-- foreign key(dept_id) references department(dept_id)
+-- );
+
+-- create table payroll(
+-- emp_id int unsigned,
+-- basic_pay double not null,
+-- deductions double not null,
+-- taxable_pay double not null,
+-- tax double not null,
+-- net_pay double not null,
+-- foreign key(emp_id) references employee(emp_id) on update cascade
+-- );
+
+-- create table department(
+-- dept_id int unsigned primary key not null unique auto_increment,
+-- name varchar(50) not null
+-- );
+
+-- create table emp_dept(
+-- emp_id int unsigned,
+-- dept_id int unsigned,
+-- foreign key(emp_id) references employee(emp_id),
+-- foreign key(dept_id) references department(dept_id)
+-- );
+
+
+show create table emp_dept;
+-- ----------------------------------------
+-- ALTERING TABLE
+-- alter table employee
+-- add foreign key(comp_id) references company(comp_id);
+-- alter table employee
+-- add foreign key(dept_id) references department(dept_id);
+-- alter table employee
+-- drop column dept_id;
+-- alter table employee
+-- drop  foreign key employee_ibfk_2;
+-- alter table employee
+-- add column phone_number varchar(50) not null after name;
+
+
+-- -------------------------------------------
+-- INSERTING VALUES
+
+-- insert into company values (1,'Nike'),(2,'Puma');
+-- INSERT INTO employee(comp_id, name, phone_number, address, gender) VALUES
+--      (1, 'Bill', '9876543210', 'a', 'M' ),
+--      (1, 'Terisa', '8876543211', 'b', 'F' ),
+--      (1, 'Charlie', '7876543212', 'c', 'M' );
+-- insert into department values(1,'Sales'),(2,'Marketing'),(3,'HR');
+-- INSERT INTO payroll VALUES
+--      (1,5000,500,4500,500,4000),
+--      (2,2000,200,1800,300,1500),
+--      (3,6000,600,5400,400,5000);
